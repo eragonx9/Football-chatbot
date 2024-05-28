@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import backgroundImage from './images.jpg'; // Import background image
 
 function App() {
   const [query, setQuery] = useState('');
@@ -36,33 +38,44 @@ function App() {
 
   const renderMessageText = (text) => {
     return text.split('\n').map((line, index) => (
-      <p key={index} className="message">{line}</p>
+      <p key={index} className="mb-1">{line}</p>
     ));
   };
 
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: `url(${backgroundImage})`, color: 'white' }}>
       <header className="App-header">
-        <h1>Football Chatbot</h1>
+        <h1 style={{ fontWeight: 'bold' }}>Football Chatbot</h1>
       </header>
-      <div className="chat-container">
+      <div className="chat-container container">
         <div className="messages">
           {messages.map((msg, index) => (
-            <div key={index} className={`message-card ${msg.sender}`}>
-              <div className="message-text">
-                {renderMessageText(msg.text)}
+            <div key={index} className={`message-card card mb-3 ${msg.sender}`}>
+              <div className="card-body">
+                <div className="d-flex">
+                  <div className="message-icon">
+                    {msg.sender === 'user' ? '🧑' : '🤖'}
+                  </div>
+                  <div className="message-text ml-2">
+                    {renderMessageText(msg.text)}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="input-container">
+        <div className="input-container input-group mt-3">
           <input 
             type="text" 
             value={query} 
             onChange={(e) => setQuery(e.target.value)} 
-            placeholder="Ask me about football..." 
+            className="form-control" 
+            placeholder="Ask me about football..."
+            style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', color: 'white' }} // Adjust input style
           />
-          <button onClick={handleSendMessage}>Send</button>
+          <div className="input-group-append">
+            <button onClick={handleSendMessage} className="btn btn-primary">Send</button>
+          </div>
         </div>
       </div>
     </div>
