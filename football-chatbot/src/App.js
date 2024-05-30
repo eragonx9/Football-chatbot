@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import backgroundImage from './images.jpg'; // Import background image
+import backgroundImage from './i2.jpg'; // Import background image
 
 function App() {
   const [query, setQuery] = useState('');

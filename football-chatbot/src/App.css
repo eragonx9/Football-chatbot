@@ -1,69 +1,91 @@
+/* Main Application Styling */
 .App {
   text-align: center;
-  color: white; /* White text color */
-  height: 100vh; /* Set the height to full viewport height */
-  background-image: url('images.jpg'); /* Replace 'your-background-image.jpg' with the path to your background image */
+  color: #f0f0f0; /* Slightly off-white text color for softer appearance */
+  height: 100vh; /* Full viewport height */
+  background-image: url('i2.jpg'); /* Background image path */
   background-size: cover; /* Cover the entire viewport */
   background-position: center; /* Center the background image */
-  background-color: rgba(0, 0, 0, 0.7); /* Darkened background color with reduced opacity */
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay with reduced opacity */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Rest of your CSS styles */
-
-/* Rest of your CSS styles */
+/* Header Styling */
 .App-header {
-  background-color: rgba(0, 0, 0, 0.5); /* Darkened header background color for better contrast with background image */
-  padding: 20px;
-  color: white;
-  font-weight: bold; /* Bold header text */
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 20px 40px; /* Increased padding for better spacing */
+  color: #f0f0f0; /* Consistent off-white color */
+  font-weight: bold;
+  font-size: 1.5rem; /* Increased font size for emphasis */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
-/* Rest of your CSS styles */
-
+/* Input Container Styling */
 .input-container {
   width: 80%;
   max-width: 600px;
-  margin: 20px auto; /* Add some margin to separate from other elements */
+  margin: 20px auto; /* Margin for spacing */
+  display: flex;
+  align-items: center;
 }
 
 .input-container input {
-  width: calc(100% - 80px); /* Adjust input width */
-  padding: 10px; /* Add padding for better appearance */
+  flex-grow: 1; /* Input takes remaining space */
+  padding: 12px 16px; /* Padding for better appearance */
   border: 2px solid #ffffff; /* White border */
-  border-radius: 5px; /* Add border radius for rounded corners */
+  border-radius: 8px 0 0 8px; /* Rounded corners on the left */
   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-  color: #000000; /* Black text color for better readability */
-  font-size: 16px; /* Adjust font size */
+  color: #000000; /* Black text color */
+  font-size: 16px; /* Font size */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s ease; /* Smooth border transition */
+}
+
+.input-container input:focus {
+  border-color: #007bff; /* Border color on focus */
 }
 
 .input-container button {
-  width: 80px; /* Fixed width for button */
-  padding: 10px; /* Add padding for better appearance */
+  width: 100px; /* Fixed width for button */
+  padding: 12px 16px; /* Padding for better appearance */
   border: none; /* Remove border */
-  border-radius: 5px; /* Add border radius for rounded corners */
-  background-color: #007bff; /* Primary blue color for button */
-  color: #ffffff; /* White text color for button */
-  cursor: pointer; /* Add cursor pointer */
-  transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+  border-radius: 0 8px 8px 0; /* Rounded corners on the right */
+  background-color: #007bff; /* Primary blue color */
+  color: #ffffff; /* White text color */
+  cursor: pointer; /* Cursor pointer */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
 .input-container button:hover {
-  background-color: #0056b3; /* Darker blue color on hover */
+  background-color: #0056b3; /* Darker blue on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
 }
 
-/* Rest of your CSS styles */
-
-
+/* Messages Container Styling */
 .messages {
   width: 80%;
   max-width: 600px;
-  background: rgba(0, 0, 0, 0.5); /* Darkened background for messages for better contrast with background image */
-  padding: 10px;
-  border-radius: 5px;
-  overflow-y: auto;
-  max-height: 400px;
-  margin: 0 auto;
-  box-shadow: 0 2px 5px rgba(255,255,255,0.1); /* Adjusted box shadow */
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker background for better contrast */
+  padding: 15px; /* Padding for spacing */
+  border-radius: 8px; /* Rounded corners */
+  overflow-y: auto; /* Scrollable content */
+  max-height: 400px; /* Maximum height */
+  margin: 20px auto; /* Centered with margin */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  color: #f0f0f0; /* Consistent text color */
 }
 
-/* Rest of your CSS styles */
+/* General Enhancements */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Modern sans-serif font */
+  background-color: #20232a; /* Fallback background color */
+}
+
+* {
+  box-sizing: border-box; /* Consistent box-sizing */
+}
